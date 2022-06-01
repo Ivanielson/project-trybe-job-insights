@@ -160,7 +160,7 @@ def matches_salary_range(job, salary):
         If `job["min_salary"]` is greather than `job["max_salary"]`
         If `salary` isn't a valid integer
     """
-    if not ("max_salary" and "min_salary") in job.keys():
+    if not ("max_salary" and "min_salary") in job:
         raise ValueError
     elif type(job["min_salary"] or job["max_salary"] or salary) != int:
         raise ValueError
