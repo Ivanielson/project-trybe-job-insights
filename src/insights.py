@@ -160,7 +160,15 @@ def matches_salary_range(job, salary):
         If `job["min_salary"]` is greather than `job["max_salary"]`
         If `salary` isn't a valid integer
     """
-    pass
+    if not ("max_salary" and "min_salary") in job.keys():
+        raise ValueError
+    elif type(job["min_salary"] or job["max_salary"] or salary) != int:
+        raise ValueError
+    elif job["min_salary"] > job["max_salary"]:
+        raise ValueError
+    elif job["min_salary"] <= salary <= job["max_salary"]:
+        return True
+    return False
 
 
 def filter_by_salary_range(jobs, salary):
