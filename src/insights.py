@@ -198,3 +198,5 @@ def filter_by_salary_range(jobs, salary):
         except ValueError:
             pass
     return list_jobs
+
+# Ref (isinstance): https://www.w3schools.com/python/ref_func_isinstance.asp
